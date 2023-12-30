@@ -1,0 +1,13 @@
+<h1>Editing user</h1>
+
+<%= form_with model: @user, html:{ multipart: true } do |f| %>
+  <% f.file_field :avatar %>
+  <%= f.submit "Upload" %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Show this user", @user %> |
+  <%= link_to "Back to users", users_path %>
+</div>
