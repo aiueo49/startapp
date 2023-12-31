@@ -8,18 +8,25 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # ここでStrong Parametersを使用
+    @user = User.new(user_params)
+
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user
     else
       render 'new'
-      flash.now[:alert] = 'User was not created.'
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:avatar)
-  end
+    # Cloudinaryへのアップロードを行う
+    uploaded_image = Cloudinary::Uploader.upload(params[:user][:avatar].tempfile.path)
+  
+    # アップロードしたファイルのURLを取得
+    cloudinary_url = uploaded_image["url"]
+  
+    # avatarを許可し、それをマージ
+    params.require(:user).permit(:avatar).merge(avatar: cloudinary_url)
+  end  
 end
