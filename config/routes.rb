@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "staticpages#top"
-  # get 'users/new', to: 'users#new'  ー
-  resources :users, only: [:new, :create]
+  # root "staticpages#top"
+  root "users#new"
+  # get 'users/new', to: 'users#new'  ーー
+  # resources :users, only: [:new, :create]
+  resources :users
 end
