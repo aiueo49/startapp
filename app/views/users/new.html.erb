@@ -1,0 +1,6 @@
+<h1>Users#new</h1>
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  <%= f.submit "Upload" %>
+<% end %>
