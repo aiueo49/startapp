@@ -4,8 +4,3 @@
   <%= f.file_field :avatar %>
   <%= f.submit "Upload" %>
 <% end %>
-
-<% if @user.avatar.present? %>
-  <h2>Uploaded Avatar:</h2>
-  <%= image_tag @user.avatar.url %>
-<% end %>
