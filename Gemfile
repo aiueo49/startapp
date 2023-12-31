@@ -10,7 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 
 # 画像をアップロードするためのgem
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave'
 
 # 画像を加工するためのgem
 gem 'mini_magick'
