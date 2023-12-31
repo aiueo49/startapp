@@ -3,8 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+# 環境変数を読み込むためのgem
+gem 'dotenv-rails', groups: [:development, :test]
+
+# 画像合成・加工のためのgem
+gem 'cloudinary'
+
 # 画像をアップロードするためのgem
 gem 'carrierwave', '~> 2.0'
+
+# 画像を加工するためのgem
 gem 'mini_magick'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
