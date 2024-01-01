@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             x: 50  # テキストのx位置の微調整
           }
         ]
-      )
+      ) 
 
       # アップロードしたファイルのURLを取得
       cloudinary_url = uploaded_image["url"]
